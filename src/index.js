@@ -21,7 +21,7 @@ const updateProfile = new CronJob('* * * * *', async () => {
         const time = moment(new Date()).format('HH:mm')
 
         await client.invoke(
-            new Api.account.UpdateProfile({ firstName: `Muhammadali | ${time}` })
+            new Api.account.UpdateProfile({ firstName: `Muhammadali | ⌚️ ${time}` })
         )
         await client.invoke(
             new Api.account.UpdateStatus({ offline: false })
