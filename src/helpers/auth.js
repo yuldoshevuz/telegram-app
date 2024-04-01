@@ -4,6 +4,7 @@ const { StringSession } = sessions
 const input = require('input')
 const path = require('path')
 const fs = require('fs')
+const logger = require('../utils/logger')
 
 const authenticateUser = async () => {
     const apiId = 17931361
@@ -31,6 +32,7 @@ const authenticateUser = async () => {
         fs.writeFileSync(path.join(__dirname, '../', '../', '.env'), environmentsFile)
         console.log('Muvaffaqiyatli ulandingiz!')
     } catch (error) {
+        logger(error)
         console.log('Qandaydir xatolik yuz berdi. Batafsil:', error)
     }
 }
