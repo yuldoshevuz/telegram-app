@@ -1,6 +1,6 @@
 module.exports = {
     apps : [{
-      name   : "Profile updater",
+      name   : "Telegram App",
       script : "./src",
       args   : "limit"
     }]

@@ -1,10 +1,13 @@
 {
-  "name": "profile-clock",
+  "name": "telegram-app",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "pm2 start"
+    "start": "pm2 start ecosystem.config.js",
+    "stop": "pm2 stop ecosystem.config.js",
+    "restart": "pm2 restart ecosystem.config.js",
+    "dev": "nodemon src"
   },
   "author": "Muhammadali <mukhammadaliweb@gmail.com>",
   "license": "ISC",
@@ -13,7 +16,9 @@
     "dotenv": "^16.4.5",
     "input": "^1.0.1",
     "moment": "^2.30.1",
-    "pm2": "^5.3.1",
     "telegram": "^2.20.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.0"
   }
 }
