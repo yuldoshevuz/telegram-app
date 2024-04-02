@@ -7,7 +7,13 @@ const imageGenerator = async (time) => {
         const URL = `https://yuldoshevuz.sirv.com/Images/watch.jpg?w=750&h=750&text=${time}&text.size=100&text.color=a1d200ff&text.align=center&text.position.gravity=center&text.font.family=Sarpanch&text.font.size=60&text.rotate=-32&text.position.y=-30&text.position.x=-30`
         const API = await fetch(URL)
         const response = await API.arrayBuffer()
-        const filePath = path.join(process.cwd(), 'src', 'image', 'photo.jpg')
+
+        const imageFolder = path.join(process.cwd(), 'src', 'image')
+        const filePath = path.join(imageFolder, 'photo.jpg')
+
+        if (!fs.existsSync(imageFolder)) {
+            fs.mkdirSync(imageFolder)
+        }
 
         if (fs.existsSync(filePath)) {
             fs.unlinkSync(filePath)
