@@ -1,7 +1,7 @@
 module.exports = {
-    apps : [{
-      name   : "Telegram App",
-      script : "./src",
-      args   : "limit"
+    apps: [{
+        name: "Telegram App",
+        script: "./src",
+        args: "limit"
     }]
-  }
+}
