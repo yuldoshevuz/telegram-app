@@ -4,7 +4,7 @@ const { StringSession } = sessions
 const input = require('input')
 const path = require('path')
 const fs = require('fs')
-const logger = require('../utils/logger')
+const logger = require('../helpers/logger')
 
 const authenticateUser = async () => {
     const apiId = 17931361
@@ -25,11 +25,11 @@ const authenticateUser = async () => {
         const environmentsFile = `API_ID=${apiId}\nAPI_HASH=${apiHash}\nSTRING_SESSION=${session}\nNIKNAME=${nikName}`
         
         await client.sendMessage('me', {
-            message: `Ushbu kodni o'chirib yubormang❗️\n\n**STRING_SESSION:** \`${session}\``,
+            message: `Ushbu kodni o'chirib yubormang!\n\n**STRING_SESSION:** \`${session}\``,
             parseMode: 'markdown'
         })
 
-        fs.writeFileSync(path.join(__dirname, '../', '../', '.env'), environmentsFile)
+        fs.writeFileSync(path.join(process.cwd(), '.env'), environmentsFile)
         console.log('Muvaffaqiyatli ulandingiz!')
     } catch (error) {
         logger(error)

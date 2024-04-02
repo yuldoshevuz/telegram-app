@@ -1,12 +1,12 @@
 const environments = require('./config/environments')
-const authenticateUser = require('./helpers/auth')
+const authenticateUser = require('./config/authenticate')
 
-async function redirectModule() {
+const modules = async () => {
     if (!environments.STRING_SESSION) {
         await authenticateUser()
     } else {
-        require('./helpers/profileUpdater')
+        require('./utils/profileUpdater')
     }
 }
 
-redirectModule()
+modules()

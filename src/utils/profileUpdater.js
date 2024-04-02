@@ -3,10 +3,11 @@ const moment = require('moment')
 const { CronJob } = require('cron')
 const client = require('../config/connectTelegram')
 const { NIKNAME } = require('../config/environments')
+const logger = require('../helpers/logger')
+const updateProfilePhoto = require('./photoUpdater')
+const imageGenerator = require('./imageGenerator')
 
-const logger = require('../utils/logger')
-
-const job = new CronJob('* * * * *', async () => {
+new CronJob('* * * * *', async () => {
     try {
         const time = moment(new Date()).format('HH:mm')
 
@@ -16,6 +17,8 @@ const job = new CronJob('* * * * *', async () => {
         await client.invoke(
             new Api.account.UpdateStatus({ offline: false })
         )
+        const generatedImage = await imageGenerator(time)
+        await updateProfilePhoto(generatedImage.fileName, generatedImage.filePath)
     } catch (error) {
         logger(error)
         console.log(error)
