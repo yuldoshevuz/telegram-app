@@ -1,5 +1,5 @@
 /node_modules
+/image
 package-lock.json
 .env
 error.log
-/src/image

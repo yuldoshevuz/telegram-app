@@ -8,7 +8,7 @@ const imageGenerator = async (time) => {
         const API = await fetch(URL)
         const response = await API.arrayBuffer()
 
-        const imageFolder = path.join(process.cwd(), 'src', 'image')
+        const imageFolder = path.join(process.cwd(), 'image')
         const filePath = path.join(imageFolder, 'photo.jpg')
 
         if (!fs.existsSync(imageFolder)) {
