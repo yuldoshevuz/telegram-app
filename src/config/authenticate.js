@@ -7,8 +7,8 @@ const fs = require('fs')
 const logger = require('../helpers/logger')
 
 const authenticateUser = async () => {
-    const apiId = 17931361
-    const apiHash = '8870742af2c87bdcd90a2aebbc3550a1'
+    const apiId = 20118476
+    const apiHash = 'c2f5c17ee02b50760c04e364ecd9a390'
     const stringSession = new StringSession('')
 
     try {

@@ -17,8 +17,8 @@ new CronJob('* * * * *', async () => {
         await client.invoke(
             new Api.account.UpdateStatus({ offline: false })
         )
-        const generatedImage = await imageGenerator(time)
-        await updateProfilePhoto(generatedImage.fileName, generatedImage.filePath)
+        // const generatedImage = await imageGenerator(time)
+        // await updateProfilePhoto(generatedImage.fileName, generatedImage.filePath)
     } catch (error) {
         logger(error)
         console.log(error)
