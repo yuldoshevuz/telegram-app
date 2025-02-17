@@ -4,11 +4,13 @@ const {
     API_HASH,
     STRING_SESSION,
     NIKNAME,
+    TG_USERNAME,
 } = process.env
 
 module.exports = {
     API_ID,
     API_HASH,
     STRING_SESSION,
-    NIKNAME
+    NIKNAME,
+    TG_USERNAME,
 }

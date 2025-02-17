@@ -21,8 +21,9 @@ const authenticateUser = async () => {
             onError: (err) => console.log(err)
         })
         const nikName = await input.text("Telegram nikname'ingizni kiriting:")
+        const username = await input.text("Telegram username kiriting:")
         const session = client.session.save()
-        const environmentsFile = `API_ID=${apiId}\nAPI_HASH=${apiHash}\nSTRING_SESSION=${session}\nNIKNAME=${nikName}`
+        const environmentsFile = `API_ID=${apiId}\nAPI_HASH=${apiHash}\nSTRING_SESSION=${session}\nNIKNAME=${nikName}\nTG_USERNAME=${username}`
         
         await client.sendMessage('me', {
             message: `Ushbu kodni o'chirib yubormang!\n\n**STRING_SESSION:** \`${session}\``,
