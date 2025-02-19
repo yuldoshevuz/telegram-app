@@ -11,9 +11,9 @@ new CronJob('* * * * *', async () => {
     try {
         const time = moment(new Date()).format('HH:mm')
 
-        await client.invoke(
-            new Api.account.UpdateProfile({ firstName: `${NIKNAME} | ⌚️ ${time}` })
-        )
+        // await client.invoke(
+        //     new Api.account.UpdateProfile({ firstName: `${NIKNAME} | ⌚️ ${time}` })
+        // )
 
         const me = await client.getMe();
 

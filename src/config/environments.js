@@ -5,6 +5,7 @@ const {
     STRING_SESSION,
     NIKNAME,
     TG_USERNAME,
+    DELETE,
 } = process.env
 
 module.exports = {
@@ -13,4 +14,5 @@ module.exports = {
     STRING_SESSION,
     NIKNAME,
     TG_USERNAME,
+    DELETE,
 }
